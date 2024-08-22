@@ -12,6 +12,18 @@ def bubble_sorter(coders:list[Coder]) -> None:
 
     return None
 
+
+def bubble_swapp_master(coders:list[Coder]) -> None:
+    n = len(coders)
+    swapp = True
+    while swapp:
+        swapp = False
+        for i in range(n-1):
+            if coders[i] > coders[i+1]:
+                coders[i], coders[i+1] = coders[i+1], coders[i]
+                swapp = True
+
+
 list_of_coders = [
         Coder('kalle', 2.2),
         Coder('Erik', 2.2),
@@ -25,7 +37,9 @@ list_of_coders = [
         Coder('Amanda', 4.8)
         ]
 
-bubble_sorter(list_of_coders)
+bubble_swapp_master(list_of_coders)
 
 for coder in list_of_coders:
     print(coder)
+
+
